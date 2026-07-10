@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sipwise — Drink Less, Drink Smarter, for $3.99 (not $99)</title>
+<meta name="description" content="Sipwise helps you drink less at your own pace. A 24/7 AI coach, smart nudges, and private tracking for $3.99/month — not $99/year. Cancel in one tap. Join the founding list.">
+<style>
+  :root{
+    --green:#10A862; --green-deep:#0B8B4E; --green-tint:#EAF7F0;
+    --ink:#14201A; --ink-soft:#51605A; --ink-faint:#8A968F;
+    --bg:#F5F9F6; --surface:#FFFFFF; --line:#E6EEE9; --amber:#DDA23A;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:720px;margin:0 auto;padding:0 22px;}
+  a{color:inherit;text-decoration:none;}
+
+  /* Nav */
+  nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;}
+  .logo{font-weight:800;font-size:20px;letter-spacing:-0.4px;}
+  .logo span{color:var(--green);}
+  .nav-btn{background:var(--green);color:#fff;font-weight:700;font-size:14px;
+    padding:10px 18px;border-radius:12px;}
+
+  /* Hero */
+  .hero{text-align:center;padding:44px 0 30px;}
+  .leaf{font-size:44px;display:block;margin-bottom:18px;}
+  h1{font-size:38px;line-height:1.1;letter-spacing:-1px;font-weight:800;margin-bottom:16px;}
+  h1 .hl{color:var(--green);}
+  .sub{font-size:17px;color:var(--ink-soft);max-width:540px;margin:0 auto 26px;}
+  .cta{display:inline-block;background:var(--green);color:#fff;font-weight:800;font-size:17px;
+    padding:16px 34px;border-radius:16px;box-shadow:0 6px 18px rgba(16,168,98,.28);
+    transition:transform .15s;}
+  .cta:hover{transform:translateY(-2px);}
+  .cta-note{font-size:13px;color:var(--ink-faint);margin-top:14px;}
+
+  /* Stats bar */
+  .stats{display:flex;gap:12px;margin:34px 0;}
+  .stat{flex:1;background:var(--surface);border-radius:16px;padding:20px 12px;text-align:center;
+    box-shadow:0 2px 10px rgba(20,32,26,.05);}
+  .stat b{display:block;font-size:26px;font-weight:800;color:var(--green);letter-spacing:-.5px;}
+  .stat span{font-size:12.5px;color:var(--ink-soft);}
+  .privacy-line{text-align:center;font-size:13px;color:var(--ink-faint);margin:-14px 0 40px;}
+
+  /* Section headings */
+  .eyebrow{text-align:center;font-size:12px;font-weight:800;letter-spacing:.9px;
+    color:var(--ink-faint);text-transform:uppercase;margin-bottom:8px;}
+  h2{text-align:center;font-size:27px;font-weight:800;letter-spacing:-.5px;margin-bottom:26px;}
+
+  /* Feature grid */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:46px;}
+  .card{background:var(--surface);border-radius:16px;padding:20px;
+    box-shadow:0 2px 10px rgba(20,32,26,.05);}
+  .card .ic{font-size:24px;margin-bottom:10px;}
+  .card h3{font-size:15.5px;font-weight:700;margin-bottom:5px;}
+  .card p{font-size:13.5px;color:var(--ink-soft);}
+  .card .soon{display:inline-block;font-size:10.5px;font-weight:800;color:var(--amber);
+    background:#FBF2DE;padding:2px 8px;border-radius:20px;margin-left:6px;vertical-align:middle;}
+
+  /* Comparison table */
+  .tablewrap{background:var(--surface);border-radius:18px;padding:8px;
+    box-shadow:0 2px 14px rgba(20,32,26,.06);margin-bottom:46px;overflow:hidden;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;}
+  th,td{padding:13px 10px;text-align:left;border-bottom:1px solid var(--line);}
+  th{font-size:12px;font-weight:800;}
+  th.us,td.us{text-align:center;background:var(--green-tint);color:var(--green-deep);font-weight:700;}
+  td.them{text-align:center;color:var(--ink-faint);}
+  tr:last-child td{border-bottom:none;}
+  td.feat{color:var(--ink);font-weight:600;}
+
+  /* Who it's for */
+  .who{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:46px;}
+  .who div{background:var(--surface);border-radius:16px;padding:20px;box-shadow:0 2px 10px rgba(20,32,26,.05);}
+  .who h4{font-size:14px;font-weight:800;margin-bottom:8px;}
+  .who .yes h4{color:var(--green);}
+  .who .no h4{color:var(--ink-faint);}
+  .who p{font-size:13.5px;color:var(--ink-soft);}
+
+  /* Signup */
+  .signup{background:var(--green);border-radius:24px;padding:40px 28px;text-align:center;
+    color:#fff;margin-bottom:40px;}
+  .signup h2{color:#fff;margin-bottom:12px;}
+  .signup p{font-size:15px;opacity:.92;max-width:460px;margin:0 auto 24px;}
+  .signup input{width:100%;max-width:340px;padding:15px 18px;border:none;border-radius:14px;
+    font-size:15px;margin-bottom:12px;font-family:inherit;}
+  .signup button{width:100%;max-width:340px;background:#0A3D25;color:#fff;font-weight:800;font-size:16px;
+    padding:15px;border:none;border-radius:14px;cursor:pointer;transition:transform .15s;}
+  .signup button:hover{transform:translateY(-2px);}
+  .signup .fine{font-size:12px;opacity:.8;margin-top:14px;}
+  .signup form{display:flex;flex-direction:column;align-items:center;}
+  #thanks{display:none;font-size:18px;font-weight:700;padding:14px 0;}
+
+  /* Footer */
+  footer{text-align:center;font-size:12.5px;color:var(--ink-faint);padding:20px 0 50px;line-height:1.7;}
+
+  @media(max-width:560px){
+    h1{font-size:30px;}
+    .grid,.who{grid-template-columns:1fr;}
+    .stats{flex-direction:column;}
+    th,td{padding:11px 7px;font-size:12.5px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <div class="logo">🥂 Sipwise</div>
+    <a href="#join" class="nav-btn">Get Early Access</a>
+  </nav>
+
+  <header class="hero">
+    <span class="leaf">🥂</span>
+    <h1>Drink less, drink smarter — for <span class="hl">$3.99</span>, not $99</h1>
+    <p class="sub">A 24/7 AI coach in your pocket, smart nudges when you're most tempted, and private drink tracking. No forced sobriety, no $99 surprise, no cancellation runaround.</p>
+    <a href="#join" class="cta">Get Early Access →</a>
+    <p class="cta-note">Founding members lock in $3.99/month — forever.</p>
+  </header>
+
+  <section class="stats">
+    <div class="stat"><b>$3.99</b><span>per month, not $99/yr</span></div>
+    <div class="stat"><b>1-tap</b><span>cancel, no dark patterns</span></div>
+    <div class="stat"><b>100%</b><span>private — no public feed</span></div>
+  </section>
+  <p class="privacy-line">🔒 Your data stays yours. No community feed, nothing public, ever.</p>
+
+  <p class="eyebrow">What you actually get</p>
+  <h2>Everything you need to cut back</h2>
+  <section class="grid">
+    <div class="card"><div class="ic">🤖</div><h3>A coach that's there at 2am</h3><p>Instant AI support the moment a craving hits — no waiting days for a human coach to reply.</p></div>
+    <div class="card"><div class="ic">🔔</div><h3>Nudges when you're weakest</h3><p>Smart reminders timed to your pattern — the evenings and moments you tend to slip.</p></div>
+    <div class="card"><div class="ic">📊</div><h3>See what you're really drinking</h3><p>Track drinks, dry days, money saved and calories cut. The awareness alone changes everything.</p></div>
+    <div class="card"><div class="ic">🎯</div><h3>Your pace, not "quit or fail"</h3><p>Set your own limit. This is about drinking less and mindfully — not forced sobriety.</p></div>
+    <div class="card"><div class="ic">🛑</div><h3>A pause before you order <span class="soon">SOON</span></h3><p>An optional shield that makes you stop and think before a late-night order on your delivery apps.</p></div>
+    <div class="card"><div class="ic">🔒</div><h3>Private by design</h3><p>No public community, no profile, no sharing. Just you and your goals.</p></div>
+  </section>
+
+  <p class="eyebrow">vs the big apps</p>
+  <h2>Why pay $99 a year?</h2>
+  <div class="tablewrap">
+    <table>
+      <tr><th>Feature</th><th class="us">Sipwise</th><th>Reframe / Sunnyside</th></tr>
+      <tr><td class="feat">Price</td><td class="us">$3.99/mo</td><td class="them">$99–298 / yr</td></tr>
+      <tr><td class="feat">24/7 instant AI coach</td><td class="us">✓ Yes</td><td class="them">Slow human (upsell)</td></tr>
+      <tr><td class="feat">Smart nudges at weak moments</td><td class="us">✓ Yes</td><td class="them">Partial</td></tr>
+      <tr><td class="feat">Cancel in one tap</td><td class="us">✓ Promise</td><td class="them">✗ #1 complaint</td></tr>
+      <tr><td class="feat">Fully private, no public feed</td><td class="us">✓ Yes</td><td class="them">✗ Public feed</td></tr>
+      <tr><td class="feat">Pause-before-you-order</td><td class="us">🔜 Coming</td><td class="them">✗ Nobody has it</td></tr>
+      <tr><td class="feat">Human coaches & big community</td><td class="us">—</td><td class="them">✓ Yes</td></tr>
+    </table>
+  </div>
+
+  <p class="eyebrow">who it's for</p>
+  <h2>Built for cutting back — not rehab</h2>
+  <section class="who">
+    <div class="yes"><h4>✓ Perfect if you…</h4><p>want to drink less at your own pace, privately, without paying $100 a year or fighting to cancel.</p></div>
+    <div class="no"><h4>Not for you if you…</h4><p>want live human coaches and a big social community — the pricey apps do that well, and you pay for it.</p></div>
+  </section>
+
+  <section class="signup" id="join">
+    <h2>Be first in — at the founding price</h2>
+    <p>We're building this now: an honest, affordable alternative to the overpriced drinking apps. Join the list for early access and lock in $3.99/month forever (or $29.99/year).</p>
+    <!-- Posts silently to your Google Form. Replace the two placeholders:
+         16Mi2vS4bUIvs-TnOs46IZXj4vPTWspkxNRFgLDXlROo  -> the long id from your form's URL (.../forms/d/e/XXXX/viewform or /d/XXXX/edit)
+         ENTRY_ID        -> the email field id, looks like entry.1234567890
+         NOTE: use the /formResponse endpoint (not /viewform). -->
+    <form action="https://docs.google.com/forms/d/16Mi2vS4bUIvs-TnOs46IZXj4vPTWspkxNRFgLDXlROo/formResponse" method="POST" target="hidden_iframe" id="waitform" onsubmit="setTimeout(showThanks,400);">
+      <input type="email" name="entry.1490259896" placeholder="your@email.com" required>
+      <button type="submit">Reserve my founding spot →</button>
+    </form>
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
+    <div id="thanks">🎉 You're in! We'll email you the moment we launch — at $3.99, locked in.</div>
+    <p class="fine">No spam. Just one email when we're ready. Unsubscribe anytime — see, we're honest about that too.</p>
+  </section>
+
+  <footer>
+    Built by people tired of wellness apps that overcharge and won't let you leave.<br>
+    Made with care in India · Not affiliated with Reframe or Sunnyside.<br>
+    © 2026 Sipwise · Drink mindfully, 21+
+  </footer>
+
+</div>
+
+<script>
+  // Google Forms blocks reading the response (CORS), so we post to a hidden
+  // iframe and just show the thank-you message after a short delay.
+  function showThanks(){
+    document.getElementById('waitform').style.display='none';
+    document.getElementById('thanks').style.display='block';
+  }
+</script>
+</body>
+</html>

@@ -191,6 +191,7 @@ footer a{color:#6FE89B}
   <p>Join the founding list — lock in $3.99/month, forever.</p>
   <form class="final-form" action="https://docs.google.com/forms/d/16Mi2vS4bUIvs-TnOs46IZXj4vPTWspkxNRFgLDXlROo/formResponse" method="POST" target="hidden_iframe" id="finalform" onsubmit="setTimeout(function(){done()},400)">
     <input type="email" name="entry.1490259896" placeholder="your@email.com" required>
+    <input type="hidden" name="entry.1553604633" id="adsource">
     <button type="submit">Reserve my spot →</button>
   </form>
   <div id="thanks">🎉 You're in — see you at launch.</div>
@@ -206,6 +207,14 @@ footer a{color:#6FE89B}
 </footer>
 
 <script>
+// Read ?ad= from the URL and drop it into the hidden form field.
+// Defaults to "direct" if someone visits with no tag.
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var src = params.get('ad') || 'direct';
+  var el = document.getElementById('adsource');
+  if(el){ el.value = src; }
+})();
 function done(){
   document.getElementById('finalform').style.display='none';
   document.getElementById('thanks').style.display='block';
